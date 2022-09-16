@@ -5,20 +5,20 @@ Create User
 @endsection
 
 @section('content')
-<section class="content container-fluid">
+<section class="content container-fluid" >
     <div class="row">
-        <div class="col-md-8" class="text-center">
+        <div class="col-md-8" class="text-center" >
 
 
             <div class="card card-default">
                 <div class="card-header">
-                    <span class="card-title">Create User</span>
+                    <span class="card-title" style="margin-left:850px ;">إنشاء متدرب</span>
                 </div>
-                <div class="card-body">
-                    <form method="POST" action="{{ url('users/store') }}" role="form" enctype="multipart/form-data" autocomplete="off">
+                <div class="card-body" >
+                    <form  method="POST" action="{{ url('users/store') }}" role="form" enctype="multipart/form-data" autocomplete="off">
                         @csrf
-                        <div class="form-group col-md-8">
-                            <label>User Name</label>
+                        <div class="form-group col-md-8" >
+                            <label style="margin-left:550px ;">الإسم </label>
                             <input type="text" name="name" class="form-control" placeholder="Enter username">
                         </div>
                         @error('name')
@@ -27,9 +27,8 @@ Create User
                         </span>
                         @enderror
                         <div class="form-group col-md-8">
-                            <label for="exampleInputEmail1">Email address</label>
+                            <label for="exampleInputEmail1" style="margin-left:490px ;">البريد الإلكتروني</label>
                             <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                         </div>
                         @error('email')
                         <span class="text-danger err-msg-email" role="alert">
@@ -37,7 +36,7 @@ Create User
                         </span>
                         @enderror
                         <div class="form-group col-md-6">
-                            <label for="exampleInputPassword1">Password</label>
+                            <label for="exampleInputPassword1" style="margin-left:360px; ">الرقم السري</label>
                             <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                         </div>
                         @error('password')
@@ -47,12 +46,12 @@ Create User
                         @enderror
                         <div class="input-group" style="margin-top: 10px;">
                             <div class="input-group-prepend">
-                                <label class="input-group-text" for="inputGroupSelect01">Role</label>
+                                <label class="input-group-text" style="margin-left:550px ;" for="inputGroupSelect01">الوظيفة</label>
                             </div>
-                            <select class="custom-select" name="status" id="inputGroupSelect01">
-                                <option selected disabled>Choose...</option>
-                                <option value="0">Empeloyee</option>
-                                <option value="1">Admin</option>
+                            <select style="margin-left:360px;"  class="custom-select" name="status" id="inputGroupSelect01">
+                                <option selected disabled>إختر...</option>
+                                <option value="0">متدرب</option>
+                                <option value="1">مدير</option>
                             </select>
                         </div>
                         @error('status')
@@ -60,7 +59,7 @@ Create User
                             <strong>{{ $message }}</strong>
                         </span>
                         @enderror
-                        <button type="submit" class="btn btn-primary" style="margin-top:10px ;">Submit</button>
+                        <button type="submit" class="btn btn-primary" style="margin-top:10px ;">حفظ</button>
 
                     </form>
                 </div>

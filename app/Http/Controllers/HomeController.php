@@ -35,6 +35,7 @@ class HomeController extends Controller
 
     public function index()
     {
+
         $auth = Auth::user();
         $reviwers = User::where('status','0')->get();
         if($auth->status == 1){

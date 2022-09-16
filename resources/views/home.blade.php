@@ -10,16 +10,16 @@
                     <div style="display: flex; justify-content: space-between; align-items: center;">
 
                         <span id="card_title">
-                            {{ __('Users') }}
+                            {{ __('المتدربين') }}
                         </span>
 
                         <div class="float-right">
                             <a href="{{ route('userCreate') }}" style="margin-left: 10px;" class="btn btn-primary btn-sm float-right" data-placement="left">
-                                {{ __('Create New') }}
+                                {{ __('إضافة متدرب') }}
                             </a>
-                            <a href="{{ route('reviewes') }}" class="btn btn-primary btn-sm float-right" data-placement="left">
+                            <!-- <a href="{{ route('reviewes') }}" class="btn btn-primary btn-sm float-right" data-placement="left">
                                 Reviewes
-                            </a>
+                            </a> -->
                         </div>
                     </div>
                 </div>
@@ -29,11 +29,10 @@
                         <thead class="thead-dark">
                             <tr>
                                 <th scope="col" class="text-center">#</th>
-                                <th scope="col" class="text-center">Username</th>
-                                <th scope="col" class="text-center">Email</th>
-                                <th scope="col" class="text-center">Role</th>
-                                <th scope="col" class="text-center"> Assign to review</th>
-                                <th scope="col" class="text-center">Actions</th>
+                                <th scope="col" class="text-center">الإسم</th>
+                                <th scope="col" class="text-center">البريد الإلكتروني</th>
+                                <th scope="col" class="text-center">الوظيفة</th>
+                                <th scope="col" class="text-center">الإجراءات</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -43,19 +42,11 @@
                                 <td class="text-center">{{ $user->name }}</td>
                                 <td class="text-center">{{ $user->email }}</td>
                                 @if($user->status == 0)
-                                <td class="text-center">Employee</td>
+                                <td class="text-center">متدرب</td>
                                 @elseif($user->status == 1)
-                                <td class="text-center">Admin</td>
+                                <td class="text-center">مدير</td>
                                 @endif
-                                @if($user->status == 0)
-                                <td class="text-center">
-                                    <button type="button"id="review" class="btn btn-primary" data-id="{{$user->id}}" data-toggle="modal" data-target="#exampleModal">
-                                        Assgin Reviewer
-                                    </button>
-                                </td>
-                                @elseif($user->status == 1)
-                                <td class="text-center"><i class="fa fa-times float"></td>
-                                @endif
+
                                 <td class="text-center">
                                     <a class="btn btn-sm btn-secondary" href="users/update/{{$user->id}}"><i class="fa fa-fw fa-edit"></i> </a>
                                     <a class="btn btn-sm btn-danger" href="users/delete/{{$user->id}}"><i class="fa fa-fw fa-trash"></i> </a>
